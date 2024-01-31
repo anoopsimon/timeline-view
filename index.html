@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline UI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #E5E5E5;
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+    }
+    .container {
+      background: #FFFFFF;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      margin: 8px;
+      overflow: hidden;
+    }
+    .calendar {
+      background: #F6F6F9;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #EAEAEA;
+    }
+    .calendar span {
+      font-weight: 500;
+    }
+    .calendar button {
+      background: #4CAF50;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      padding: 8px 12px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .event {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      border-bottom: 1px solid #EAEAEA;
+    }
+    .event:last-child {
+      border-bottom: none;
+    }
+    .event-date {
+      min-width: 60px;
+      color: #4CAF50;
+      font-weight: 500;
+      margin-right: 12px;
+    }
+    .event-image {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      margin-right: 12px;
+      object-fit: cover;
+    }
+    .event-description {
+      flex-grow: 1;
+    }
+    .button {
+      width: calc(100% - 32px);
+      padding: 12px;
+      margin: 16px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="calendar">
+    <!-- Calendar Header -->
+    <span>June 2022 ☀️</span>
+    <button id="addEventBtn">+</button> <!-- Assuming this is for adding new events -->
+  </div>
+  <div id="events"> <!-- Changed from class to id for jQuery selector -->
+    <!-- Events List will be loaded here -->
+  </div>
+  <button id="timelineBtn" class="button">View Timeline</button> <!-- This is the timeline button -->
+  <button class="button">Confirm Journey</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
