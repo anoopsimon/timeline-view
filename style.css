@@ -84,9 +84,9 @@
 
 .loader {
     position: fixed;
-    top: 0;
-    left: 0;
+    margin-left: 50%;
     width: 100%;
+    margin-top: 20%;
     height: 100%;
     background: rgba(255, 255, 255, 0.9);
     display: flex;
