@@ -24,14 +24,28 @@
     font-size: larger;
   }
   
-  
-  .hidden {
-    display: none;
-  }
- .homepage-text{
-    color: white;
+  .timeline-container {
+    max-width: 400px; /* Adjust max-width as needed for your mobile-friendly view */
+    margin: 0 auto; /* Center the container horizontally */
+    width: 100%; /* Set width to 100% of its parent */
+}
 
-  }
+.timeline-header {
+    background-color: #fff; /* White background */
+    padding: 0px 0; /* Adjust padding as needed */
+    text-align: center;
+    border-bottom: 2px solid #eaeaea; /* Subtle bottom border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    width: 100%; /* Set width to 100% of its parent */
+}
+
+.timeline-header h1 {
+    margin: 0;
+    font-size: 1.5em; /* Responsive font size */
+    color: #333; /* Dark text color */
+}
+
+
   
   #viewTimelineBtn {
     padding: 10px 20px;
