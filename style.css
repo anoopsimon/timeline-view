@@ -19,6 +19,11 @@
     background-size: cover;
   }
   
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: larger;
+  }
+  
   
   .hidden {
     display: none;
