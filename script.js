@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    var startDateStr = "07/11/2023"; 
+
     var timelineData = [
         {
             "date": "01/01/2024",
@@ -45,7 +47,6 @@ $(document).ready(function() {
       
 
       function displayTimelineEvents(data) {
-        const startDateStr = "01/01/2022"; // Start date in DD/MM/YYYY format
       
         var timelineHtml = '';
         data.forEach(function(event, index) {

@@ -28,6 +28,10 @@
   .hidden {
     display: none;
   }
+ .homepage-text{
+    color: white;
+
+  }
   
   #viewTimelineBtn {
     padding: 10px 20px;
@@ -127,8 +131,3 @@
     to { opacity: 1; }
 }
 
- 
-.homepage-text {
-    color: #ffffff; /* Use white text for dark backgrounds or black (#000000) for light backgrounds */
-  }
-  
