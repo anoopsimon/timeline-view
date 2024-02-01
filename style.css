@@ -9,6 +9,16 @@
     background-size: cover;
     background-position: center;
   }
+
+  .welcome-screen {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),  /* Starting color, semi-transparent black */
+        rgba(0, 0, 0, 0.5)   /* Ending color, can be different */
+      ),
+      url('assets/bg.png') no-repeat center center;
+    background-size: cover;
+  }
+  
   
   .hidden {
     display: none;
@@ -111,3 +121,9 @@
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+ 
+.homepage-text {
+    color: #ffffff; /* Use white text for dark backgrounds or black (#000000) for light backgrounds */
+  }
+  
