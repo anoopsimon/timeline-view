@@ -16,7 +16,7 @@ document.getElementById("tagline-sub").textContent = tagLineSub;
             "date": "01/01/2024",
             "description": "Slab poured",
             "comments": "This is where the foundation was set.",
-            "images": ["https://placehold.co/600x400/000000/FFF", "https://fastly.picsum.photos/id/418/200/300.jpg?hmac=T7cC_OCVJnIk98mcvhuKBWancCeGl2KcyuSBTCYE-QM"]
+            "images": ["assets/roof/roof1.jpg", "https://fastly.picsum.photos/id/418/200/300.jpg?hmac=T7cC_OCVJnIk98mcvhuKBWancCeGl2KcyuSBTCYE-QM"]
         },
         {
             "date": "18/01/2024",
