@@ -39,7 +39,13 @@ $(document).ready(function() {
 
     $('#viewTimelineBtn').click(function() {
         $('#welcomeScreen').hide();
-        $('#timeline').removeClass('hidden');
+        $('#loader').show();
+
+        // Fake loading delay
+        setTimeout(function() {
+            $('#loader').hide();
+            $('#timeline').removeClass('hidden');
+        }, 1500); // Adjust the time as needed (3000 ms = 3 seconds)
     });
 
     window.changeSlide = function(move, galleryIndex) {
