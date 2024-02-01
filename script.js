@@ -37,26 +37,24 @@ $(document).ready(function() {
         $('#events').html(timelineHtml);
     }
 
-    displayTimelineEvents(timelineData);
+    $('#viewTimelineBtn').click(function() {
+        $('#welcomeScreen').hide();
+        $('#timeline').removeClass('hidden');
+    });
 
     window.changeSlide = function(move, galleryIndex) {
         var gallery = document.getElementById('gallery-' + galleryIndex);
-        if (!gallery) return; // Check if gallery exists
-      
         var slides = gallery.getElementsByClassName('gallery-slide');
         var activeSlide = gallery.querySelector('.gallery-slide.active');
-        if (!activeSlide) return; // Check if there's an active slide
-      
         var currentIndex = Array.prototype.indexOf.call(slides, activeSlide);
         var nextIndex = (currentIndex + move + slides.length) % slides.length;
       
-        // Remove 'active' class from all slides
         Array.prototype.forEach.call(slides, function(slide) {
-          slide.classList.remove('active');
+            slide.classList.remove('active');
         });
       
-        // Add 'active' class to the next slide
         slides[nextIndex].classList.add('active');
-      };
-      
+    };
+
+    displayTimelineEvents(timelineData);
 });

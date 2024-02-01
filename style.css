@@ -1,3 +1,31 @@
+.welcome-screen {
+    background-image: url('path_to_your_background_image.jpg'); /* Replace with your image path */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #viewTimelineBtn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+
 .gallery-container {
     position: relative;
     width: 100%;
