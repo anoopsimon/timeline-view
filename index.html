@@ -11,7 +11,8 @@
 </head>
 <div id="welcomeScreen" class="welcome-screen">
     <div class="homepage-text">
-        <h1>Welcome to Our Timeline</h1>
+        <h1 id="tagline"></h1>
+        <h4 id="tagline-sub"></h4>
         <button id="viewTimelineBtn">View Timeline</button>
     </div>
    
@@ -24,9 +25,10 @@
 <!-- Timeline (Initially Hidden) -->
 <div id="timeline" class="hidden">
     <header class="timeline-header">
-        <h1>Our build timeline </h1>
-        <h2>Showing events from 01/01/2022</h2>
+        <h1 id="timeline-title"></h1>
+        <h2 id="timeline-date"></h2>
     </header>
+    
     <div id="events" class="flex flex-col items-center justify-center min-h-screen">
 
         <!-- Timeline events will be loaded here -->

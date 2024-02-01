@@ -23,6 +23,17 @@
     font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: larger;
   }
+
+  #timeline-title {
+    font-size: 2em; /* Increase the font size for emphasis */
+    font-weight: bold; /* Make the text bold */
+    color: #007bff; /* Use a theme color that matches your site's theme */
+    text-transform: capitalize; /* Convert text to uppercase for a modern look */
+    margin-bottom: 5px; /* Add some spacing below the title */
+    letter-spacing: 1px; /* Increase letter spacing for a stylish effect */
+    font-family: 'San Francisco', 'Helvetica Neue', Arial, sans-serif;
+}
+
   
   .timeline-container {
     max-width: 400px; /* Adjust max-width as needed for your mobile-friendly view */
@@ -39,10 +50,18 @@
     width: 100%; /* Set width to 100% of its parent */
 }
 
-.timeline-header h1 {
+#tagline  {
     margin: 0;
     font-size: 1.5em; /* Responsive font size */
-    color: #333; /* Dark text color */
+    color: white;
+
+}
+
+#tagline-sub  {
+  margin: 0;
+  font-size: 0.8em; /* Responsive font size */
+  color: white;
+
 }
 
 

@@ -1,5 +1,15 @@
 $(document).ready(function() {
     var startDateStr = "07/11/2023"; 
+    var title = "Build Timeline";
+    var tagline="Our Construction Journey";
+    var tagLineSub="Welcome to our Build Timeline – a simple, informative journey showcasing the progress of our construction project. Explore images, dates, and milestones, providing valuable insights for fellow builders on their own construction journeys. Follow along and gain inspiration from our ongoing construction adventure";
+
+// Update the text of the h1 and h2 elements
+document.getElementById("timeline-title").textContent = title;
+document.getElementById("timeline-date").textContent = "Showing events from " + startDateStr;
+document.getElementById("tagline").textContent = tagline;
+
+document.getElementById("tagline-sub").textContent = tagLineSub;
 
     var timelineData = [
         {
