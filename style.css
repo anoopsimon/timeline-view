@@ -1,14 +1,14 @@
-  .gallery-container {
+.gallery-container {
     position: relative;
     width: 100%;
-    max-height: 400px; /* Adjust based on your preference */
+    max-height: 400px;
     overflow: hidden;
   }
 
   .gallery-slide {
     display: none;
     width: 100%;
-    height: 400px; /* Same as max-height of gallery-container */
+    height: 400px;
     background-size: cover;
     background-position: center;
   }
@@ -26,6 +26,7 @@
     border: none;
     cursor: pointer;
     padding: 10px;
+    font-size: 24px;
   }
 
   .gallery-prev { left: 10px; }
