@@ -2,12 +2,14 @@ $(document).ready(function () {
     var startDateStr = "31/10/2023";
     var title = "Build Timeline";
     var tagline = "Our Construction Journey";
+    var additional ="Henley - Valletta 48 - Novello Facade - Location Melbourne";
     var tagLineSub = "Welcome to our Build Timeline – a simple, informative journey showcasing the progress of our construction project. Explore images, dates, and milestones, providing valuable insights for fellow builders on their own construction journeys. Follow along and gain inspiration from our ongoing construction adventure";
 
     var timelineData = [
         {
             "date": "01/11/2023",
             "description": "Lot Cleanup",
+            "tag":"#cleanup",
             "comments": "This is where the foundation was set.",
             "images": [
                 "assets/lotcleanup/1.jpg",
@@ -18,6 +20,7 @@ $(document).ready(function () {
         {
             "date": "05/11/2023",
             "description": "Site Started",
+            "tag":"#sitestart",
             "comments": "This is frame was set.",
             "images": [
                 "assets/pre-slab/1.jpg",
@@ -28,6 +31,7 @@ $(document).ready(function () {
         {
             "date": "16/11/2023",
             "description": "Pre-Slab Inspection",
+            "tag":"#slab-inspection",
             "comments": "We've appointed an independent building inspector - NHI",
             "images": [
                 "assets/pre-slab/3.png",
@@ -36,6 +40,7 @@ $(document).ready(function () {
         {
             "date": "17/11/2023",
             "description": "Slab Pour",
+            "tag":"#slab",
             "comments": "We've appointed an independent building inspector - NHI",
             "images": [
                 "assets/slab/1.jpg",
@@ -48,6 +53,8 @@ $(document).ready(function () {
     // Update the text of the h1 and h2 elements
     document.getElementById("timeline-title").textContent = title;
     document.getElementById("timeline-date").textContent = "Showing events from " + startDateStr;
+    document.getElementById("timeline-additional").textContent = additional;
+
     document.getElementById("tagline").textContent = tagline;
 
     document.getElementById("tagline-sub").textContent = tagLineSub;
@@ -82,17 +89,24 @@ $(document).ready(function () {
 
 
     function displayTimelineEvents(data) {
-
+        var previousStageDate=startDateStr;
         var timelineHtml = '';
         data.forEach(function (event, index) {
             const daysSinceStart = calculateDaysSince(startDateStr, event.date);
+            const daysSincePreviousStage = calculateDaysSince(previousStageDate, event.date);
 
             timelineHtml += `<div class="max-w-xl w-full mx-auto bg-white p-5 rounded-lg shadow-md mb-8">`;
+            timelineHtml += `<div id="cleanup" style="background-color:#9cc94b; width:120px; border-radius:10px; padding:5px 10px; text-align:center;">${event.tag}</div>`;
+
             timelineHtml += `<div class="text-lg font-bold">${event.date} (${daysSinceStart} days since site start)</div>`;
+             if(daysSinceStart != daysSincePreviousStage ){   
+            timelineHtml += `<div class="text-small" style="color:green"> (${daysSincePreviousStage} days since ${event.tag})</div>`;
+             }
             timelineHtml += `<p class="text-gray-700 my-2">${event.description}</p>`;
             timelineHtml += `<p class="text-gray-600">${event.comments}</p>`;
             timelineHtml += createImageGallery(event, index);
             timelineHtml += `</div>`;
+            previousStageDate=event.date;
         });
 
         $('#events').html(timelineHtml);

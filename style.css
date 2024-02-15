@@ -27,11 +27,11 @@
   #timeline-title {
     font-size: 2em; /* Increase the font size for emphasis */
     font-weight: bold; /* Make the text bold */
-    color: #007bff; /* Use a theme color that matches your site's theme */
+    color: #034f75; /* Use a theme color that matches your site's theme */
     text-transform: capitalize; /* Convert text to uppercase for a modern look */
     margin-bottom: 5px; /* Add some spacing below the title */
     letter-spacing: 1px; /* Increase letter spacing for a stylish effect */
-    font-family: 'cursive';
+    font-family: cursive;
 }
 
   
@@ -57,9 +57,10 @@
 #tagline-sub  {
   margin: 0;
   font-size: 0.8em; /* Responsive font size */
-  color: white;
+  color: rgb(251, 251, 251);
 
 }
+
 
 
   
