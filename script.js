@@ -47,6 +47,41 @@ $(document).ready(function () {
                 "assets/slab/2.jpg",
                 "assets/slab/3.jpg"
             ]
+        },
+        {
+            "date": "02/12/2023",
+            "description": "Frame Stage",
+            "tag":"#frame",
+            "comments": "Frame work started on 12 Dec ",
+            "images": [
+                "assets/frame/1.jpg",
+                "assets/frame/2.jpg",
+                "assets/frame/3.jpg"
+            ]
+        },
+        {
+            "date": "07/02/2024",
+            "description": "Rough Ins",
+            "tag":"#roughin",
+            "comments": "Rough in started",
+            "images": [
+                "assets/rough/1.jpg",
+                "assets/rough/2.jpg",
+                "assets/rough/3.jpg",
+                "assets/rough/4.jpg",
+                "assets/rough/5.jpg",
+            ]
+        },
+        {
+            "date": "11/02/2024",
+            "description": "Wrapping",
+            "tag":"#wrapping",
+            "comments": "Frame work started on 12 Dec ",
+            "images": [
+                "assets/wrapping/1.jpg",
+                "assets/wrapping/2.jpg",
+               
+            ]
         }
     ];
 
@@ -90,6 +125,7 @@ $(document).ready(function () {
 
     function displayTimelineEvents(data) {
         var previousStageDate=startDateStr;
+        var previousStageTag="";
         var timelineHtml = '';
         data.forEach(function (event, index) {
             const daysSinceStart = calculateDaysSince(startDateStr, event.date);
@@ -100,13 +136,14 @@ $(document).ready(function () {
 
             timelineHtml += `<div class="text-lg font-bold">${event.date} (${daysSinceStart} days since site start)</div>`;
              if(daysSinceStart != daysSincePreviousStage ){   
-            timelineHtml += `<div class="text-small" style="color:green"> (${daysSincePreviousStage} days since ${event.tag})</div>`;
+            timelineHtml += `<div class="text-small" style="color:green"> (${daysSincePreviousStage} days since ${previousStageTage})</div>`;
              }
             timelineHtml += `<p class="text-gray-700 my-2">${event.description}</p>`;
             timelineHtml += `<p class="text-gray-600">${event.comments}</p>`;
             timelineHtml += createImageGallery(event, index);
             timelineHtml += `</div>`;
             previousStageDate=event.date;
+            previousStageTage=event.tag;
         });
 
         $('#events').html(timelineHtml);
