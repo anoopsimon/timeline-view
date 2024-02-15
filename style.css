@@ -19,8 +19,8 @@
     background-size: cover;
   }
   
-  body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+  html {
+    font-family: cursive;
     font-size: larger;
   }
 
@@ -31,7 +31,7 @@
     text-transform: capitalize; /* Convert text to uppercase for a modern look */
     margin-bottom: 5px; /* Add some spacing below the title */
     letter-spacing: 1px; /* Increase letter spacing for a stylish effect */
-    font-family: 'San Francisco', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'cursive';
 }
 
   
@@ -42,12 +42,9 @@
 }
 
 .timeline-header {
-    background-color: #fff; /* White background */
-    padding: 0px 0; /* Adjust padding as needed */
-    text-align: center;
-    border-bottom: 2px solid #eaeaea; /* Subtle bottom border */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    width: 100%; /* Set width to 100% of its parent */
+  text-align: center;
+  margin-top: 1rem;
+  font-family: 'cursive';
 }
 
 #tagline  {
@@ -157,6 +154,7 @@
 
 #timeline {
     animation: fadeIn 0.5s ease-in-out;
+    
 }
 
 @keyframes fadeIn {
