@@ -23,7 +23,7 @@
   }
   
   html {
-    font-family: 'Courier New', Courier, monospace;
+    
     font-size: larger;
   }
 
@@ -171,7 +171,5 @@ color: rgb(39, 144, 210);
     to { opacity: 1; }
 }
 
-html{
-  font-family:  'Courier New', Courier, monospace;
-}
+
 
