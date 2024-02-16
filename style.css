@@ -37,6 +37,11 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+#timeline-additional{
+box-shadow: #3498db;
+color: rgb(39, 144, 210);
+}
+
   
   .timeline-container {
     max-width: 400px; /* Adjust max-width as needed for your mobile-friendly view */
