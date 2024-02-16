@@ -17,10 +17,13 @@
       ),
       url('assets/bg.png') no-repeat center center;
     background-size: cover;
+    max-width: 400px;
+    margin: 0 auto; /* Center the container horizontally */
+
   }
   
   html {
-    font-family: cursive;
+    font-family: 'Courier New', Courier, monospace;
     font-size: larger;
   }
 
@@ -31,7 +34,7 @@
     text-transform: capitalize; /* Convert text to uppercase for a modern look */
     margin-bottom: 5px; /* Add some spacing below the title */
     letter-spacing: 1px; /* Increase letter spacing for a stylish effect */
-    font-family: cursive;
+    font-family: 'Courier New', Courier, monospace;
 }
 
   
@@ -44,7 +47,7 @@
 .timeline-header {
   text-align: center;
   margin-top: 1rem;
-  font-family: cursive;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #tagline  {

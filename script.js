@@ -1,16 +1,16 @@
 $(document).ready(function () {
-    var startDateStr = "31/10/2023";
+    var startDateStr = "01/11/2023";
     var title = "Build Timeline";
     var tagline = "Our Construction Journey";
-    var additional ="Henley - Valletta 48 - Novello Facade - Location Melbourne";
+    var additional = "Henley - Valletta 48 - Novello Facade - Location Melbourne";
     var tagLineSub = "Welcome to our Build Timeline – a simple, informative journey showcasing the progress of our construction project. Explore images, dates, and milestones, providing valuable insights for fellow builders on their own construction journeys. Follow along and gain inspiration from our ongoing construction adventure";
 
     var timelineData = [
         {
             "date": "01/11/2023",
             "description": "Lot Cleanup",
-            "tag":"#cleanup",
-            "comments": "This is where the foundation was set.",
+            "tag": "#cleanup",
+            "comments": "Lot was cleaned up by Henley.",
             "images": [
                 "assets/lotcleanup/1.jpg",
                 "assets/lotcleanup/2.jpg",
@@ -19,9 +19,9 @@ $(document).ready(function () {
         },
         {
             "date": "05/11/2023",
-            "description": "Site Started",
-            "tag":"#sitestart",
-            "comments": "This is frame was set.",
+            "description": "Construction Started",
+            "tag": "#sitestart",
+            "comments": "Excavation & Pre Slab pour work started",
             "images": [
                 "assets/pre-slab/1.jpg",
                 "assets/pre-slab/2.jpg"
@@ -31,7 +31,7 @@ $(document).ready(function () {
         {
             "date": "16/11/2023",
             "description": "Pre-Slab Inspection",
-            "tag":"#slab-inspection",
+            "tag": "#slab-inspection",
             "comments": "We've appointed an independent building inspector - NHI",
             "images": [
                 "assets/pre-slab/3.png",
@@ -40,7 +40,7 @@ $(document).ready(function () {
         {
             "date": "17/11/2023",
             "description": "Slab Pour",
-            "tag":"#slab",
+            "tag": "#slab",
             "comments": "We've appointed an independent building inspector - NHI",
             "images": [
                 "assets/slab/1.jpg",
@@ -51,7 +51,7 @@ $(document).ready(function () {
         {
             "date": "02/12/2023",
             "description": "Frame Stage",
-            "tag":"#frame",
+            "tag": "#frame",
             "comments": "Frame work started on 12 Dec ",
             "images": [
                 "assets/frame/1.jpg",
@@ -60,9 +60,28 @@ $(document).ready(function () {
             ]
         },
         {
+            "date": "22/01/2024",
+            "description": "Frame Stage",
+            "tag": "#frame-complete",
+            "comments": "Frame work completed on 22 Jan ",
+            "images": [
+                "assets/frame/finished.jpg"
+            ]
+        },
+        {
+            "date": "24/01/2024",
+            "description": "Roofing",
+            "tag": "#roof",
+            "comments": "Roof work started",
+            "images": [
+                "assets/roof/roof1.jpg",
+                "assets/roof/roof2.mp4"
+            ]
+        },
+        {
             "date": "07/02/2024",
             "description": "Rough Ins",
-            "tag":"#roughin",
+            "tag": "#roughin",
             "comments": "Rough in started",
             "images": [
                 "assets/rough/1.jpg",
@@ -75,12 +94,12 @@ $(document).ready(function () {
         {
             "date": "11/02/2024",
             "description": "Wrapping",
-            "tag":"#wrapping",
+            "tag": "#wrapping",
             "comments": "Frame work started on 12 Dec ",
             "images": [
                 "assets/wrapping/1.jpg",
                 "assets/wrapping/2.jpg",
-               
+
             ]
         }
     ];
@@ -94,10 +113,25 @@ $(document).ready(function () {
 
     document.getElementById("tagline-sub").textContent = tagLineSub;
 
+
+
     function createImageGallery(event, index) {
         var galleryHtml = `<div class="gallery-container" id="gallery-${index}">`;
         event.images.forEach(function (image, imgIndex) {
-            galleryHtml += `<div class="gallery-slide ${imgIndex === 0 ? 'active' : ''}" style="background-image: url('${image}');"></div>`;
+            // Check if the current file is a video by looking at its extension
+            if(image.endsWith('.mp4')) {
+                // If it's a video, create a video element instead of a div
+                galleryHtml += `
+                    <div class="gallery-slide ${imgIndex === 0 ? 'active' : ''}">
+                        <video controls style="max-width: 100%; height: auto;">
+                            <source src="${image}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>`;
+            } else {
+                // If it's an image, use the original approach
+                galleryHtml += `<div class="gallery-slide ${imgIndex === 0 ? 'active' : ''}" style="background-image: url('${image}');"></div>`;
+            }
         });
         galleryHtml += `
             <button class="gallery-prev" onclick="changeSlide(-1, ${index})">❮</button>
@@ -105,6 +139,7 @@ $(document).ready(function () {
         </div>`;
         return galleryHtml;
     }
+    
 
     function convertDateToISO(dateStr) {
         const parts = dateStr.split('/');
@@ -124,26 +159,30 @@ $(document).ready(function () {
 
 
     function displayTimelineEvents(data) {
-        var previousStageDate=startDateStr;
-        var previousStageTag="";
+        var previousStageDate = startDateStr;
+        var previousStageTag = "";
         var timelineHtml = '';
         data.forEach(function (event, index) {
             const daysSinceStart = calculateDaysSince(startDateStr, event.date);
             const daysSincePreviousStage = calculateDaysSince(previousStageDate, event.date);
 
             timelineHtml += `<div class="max-w-xl w-full mx-auto bg-white p-5 rounded-lg shadow-md mb-8">`;
-            timelineHtml += `<div id="cleanup" style="background-color:#9cc94b; width:120px; border-radius:10px; padding:5px 10px; text-align:center;">${event.tag}</div>`;
 
-            timelineHtml += `<div class="text-lg font-bold">${event.date} (${daysSinceStart} days since site start)</div>`;
-             if(daysSinceStart != daysSincePreviousStage ){   
-            timelineHtml += `<div class="text-small" style="color:green"> (${daysSincePreviousStage} days since ${previousStageTage})</div>`;
-             }
-            timelineHtml += `<p class="text-gray-700 my-2">${event.description}</p>`;
-            timelineHtml += `<p class="text-gray-600">${event.comments}</p>`;
+            if (daysSinceStart != daysSincePreviousStage) {
+                timelineHtml += `<div class="text-lg font-bold">${event.date} (${daysSinceStart} days since site start)</div>`;
+                timelineHtml += `<div class="text-small" style="color:green"> (${daysSincePreviousStage} days since ${previousStageTag})</div>`;
+            }else{
+                timelineHtml += `<div class="text-lg font-bold">${event.date}</div>`;
+  
+            }
+            timelineHtml += `<div id="cleanup" style="font-size:9px;background-color:#9cc94b; width:70px; border-radius:10px; padding:5px 10px; text-align:center;">${event.tag}</div>`;
+
+            timelineHtml += `<p class="text-gray-700 my-2" >${event.description}</p>`;
+            timelineHtml += `<p class="text-gray-600" style="font-size:12px">${event.comments}</p>`;
             timelineHtml += createImageGallery(event, index);
             timelineHtml += `</div>`;
-            previousStageDate=event.date;
-            previousStageTage=event.tag;
+            previousStageDate = event.date;
+            previousStageTag = event.tag;
         });
 
         $('#events').html(timelineHtml);
